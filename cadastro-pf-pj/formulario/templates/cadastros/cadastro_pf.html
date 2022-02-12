@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}Cadastro clientes{% endblock %}
+</head>
+<body>
+   {% block content %}
+    <div class="offset-1 col-10 list-div">
+        <h1>Adicione um novo cadastro:</h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{form|crispy}}
+
+            <input type="submit" class="btn btn-success" value="Cadastrar">
+        </form>
+
+    </div>
+   {% endblock %}
+</body>
+</html>

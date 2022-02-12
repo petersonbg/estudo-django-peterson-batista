@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}Lista de Cadastros{% endblock %}
+</head>
+<body>
+    {% block content %}
+        <div class="list-div col-10">
+            <h1>Lista de Cadastros</h1>
+            <div class="barra-botoes">
+                <span><a href="novocadastro_pf/">Novo</a></span>
+                <span><a href="editar/">Editar</a></span>
+                <span>Desativar</span>
+            </div>
+            <div>
+                {% for cliente_pj in cli_pj%}
+                    {{cliente_pj.nome}}
+                {% endfor %}
+
+                {% for cliente_pf in cli_pf %}
+                    {{cliente_pf.nome}}
+                {% endfor %}
+            </div>
+        </div>
+    {% endblock %}
+</body>
+</html>
