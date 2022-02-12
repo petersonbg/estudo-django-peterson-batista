@@ -30,8 +30,10 @@ class DadosPessoa(models.Model):
         ('SP', 'São Paulo'),
         ('TO', 'Tocantins')
     )
+
     class Meta:
         abstract = True
+
     nome = models.CharField(max_length=100)
     telefone = models.CharField(max_length=15)
     email = models.CharField(max_length=100)
@@ -50,9 +52,13 @@ class DadosPessoaFisica(DadosPessoa):
     dt_nasc = models.DateField()
     sexo = models.CharField(max_length=1, choices=SEXO_CHOICE)
 
+    def __str__(self):
+        return f'{self.nome}'
+
 
 class DadosPessoaJuridica(DadosPessoa):
     cnpj = models.CharField(max_length=20)
     insc_estadual = models.CharField(max_length=15)
 
-
+    def __str__(self):
+        return f'{self.nome}'
