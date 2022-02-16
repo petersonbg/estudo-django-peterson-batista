@@ -7,22 +7,28 @@
 </head>
 <body>
     {% block content %}
-        <div class="list-div col-10">
             <h1>Lista de Cadastros</h1>
-            <div class="barra-botoes">
-                <span><a href="novocadastro_pf/">Novo</a></span>
-                <span><a href="editar/">Editar</a></span>
-                <span>Desativar</span>
-            </div>
-            <div>
-                {% for cliente_pj in cli_pj%}
-                    {{cliente_pj.nome}}
+                <div class="dropdown">
+                  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    Novo Cadastro
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="novocadastro_pj/">Pessoa Juridica</a></li>
+                    <li><a class="dropdown-item" href="novocadastro_pf/">Pessoa Fisica</a></li>
+                  </ul>
+                    <button type="button" class="btn btn-primary">Editar</button>
+                <button type="button" class="btn btn-danger">Desativar</button>
+                </div>
+
+                {% for clientes in cliente %}
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="">
+                      <label class="form-check-label" for="flexCheckDefault">
+                        {{clientes.id}} - {{clientes.nome}} - {{clientes.endereco}}
+                      </label>
+                    </div>
                 {% endfor %}
 
-                {% for cliente_pf in cli_pf %}
-                    {{cliente_pf.nome}}
-                {% endfor %}
-            </div>
         </div>
     {% endblock %}
 </body>

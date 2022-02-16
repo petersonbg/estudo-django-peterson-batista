@@ -1,19 +1,14 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .forms_pf import FormPessoaFisica
-from .forms_pj import FormPessoaJuridica
-from .models import DadosPessoaFisica, DadosPessoaJuridica
+from .forms import FormPessoaFisica
+from .forms import FormPessoaJuridica
+from .models import DadosPessoa
+from django.views import generic
 
 
 def lista_cadastro(request):
-    cli_pf = DadosPessoaFisica.objects.all().order_by('nome')
-    cli_pj = DadosPessoaJuridica.objects.all().order_by('nome')
+    cliente = DadosPessoa.objects.all().order_by('nome')
 
-    clientes = {
-        'cli_pf': cli_pf,
-        'cli_pj': cli_pj
-    }
-
-    return render(request, 'cadastros/lista_cad.html', clientes)
+    return render(request, 'cadastros/lista_cad.html', {'cliente': cliente})
 
 
 def novo_cadastro_pf(request):

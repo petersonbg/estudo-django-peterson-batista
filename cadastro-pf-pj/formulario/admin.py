@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import DadosPessoaFisica, DadosPessoaJuridica
+from .models import DadosPessoa
 
-admin.site.register(DadosPessoaFisica)
-admin.site.register(DadosPessoaJuridica)
+admin.site.register(DadosPessoa)
+
 
 # Register your models here.
