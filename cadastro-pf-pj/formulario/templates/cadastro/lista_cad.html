@@ -19,16 +19,29 @@
                     <button type="button" class="btn btn-primary">Editar</button>
                 <button type="button" class="btn btn-danger">Desativar</button>
                 </div>
-
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Telefone</th>
+                            <th scope="col">Endereço</th>
+                            <th scope="col">Cidade</th>
+                        </tr>
+                    </thead>
                 {% for clientes in cliente %}
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="">
-                      <label class="form-check-label" for="flexCheckDefault">
-                        {{clientes.id}} - {{clientes.nome}} - {{clientes.endereco}}
-                      </label>
-                    </div>
-                {% endfor %}
+                    <tbody>
+                        <tr>
+                            <th scope="row">{{clientes.id}}</th>
+                            <td><a href="cadastro/{{clientes.id}}/">{{clientes.nome}}</a></td>
+                            <td>{{clientes.telefone}}</td>
+                            <td>{{clientes.endereco}}</td>
+                            <td>{{clientes.cidade}}</td>
+                        </tr>
+                    </tbody>
 
+                {% endfor %}
+                </table>
         </div>
     {% endblock %}
 </body>
