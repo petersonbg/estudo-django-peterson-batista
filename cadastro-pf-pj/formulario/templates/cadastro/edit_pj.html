@@ -9,15 +9,24 @@
 </head>
 <body>
    {% block content %}
-    <div class="offset-1 col-10 list-div">
         <h1>Editar cadastro:</h1>
         <form method="POST">
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    Novo Cadastro
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="/novocadastro_pj">Pessoa Juridica</a></li>
+                    <li><a class="dropdown-item" href="/novocadastro_pf">Pessoa Fisica</a></li>
+                </ul>
+                <input type="submit" class="btn btn-success" value="Salvar">
+                <button type="button" class="btn btn-danger">Excluir</button>
+            </div>
             {% csrf_token %}
             {{form|crispy}}
-            <input type="submit" class="btn btn-success" value="Cadastrar">
         </form>
 
-    </div>
+
    {% endblock %}
 </body>
 </html>

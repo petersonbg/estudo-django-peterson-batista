@@ -16,8 +16,6 @@
                     <li><a class="dropdown-item" href="novocadastro_pj/">Pessoa Juridica</a></li>
                     <li><a class="dropdown-item" href="novocadastro_pf/">Pessoa Fisica</a></li>
                   </ul>
-                    <button type="button" class="btn btn-primary">Editar</button>
-                <button type="button" class="btn btn-danger">Desativar</button>
                 </div>
                 <table class="table">
                     <thead>
@@ -32,8 +30,15 @@
                 {% for clientes in cliente %}
                     <tbody>
                         <tr>
-                            <th scope="row">{{clientes.id}}</th>
-                            <td><a href="cadastro/{{clientes.id}}/">{{clientes.nome}}</a></td>
+                            <th scope="row">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                {{clientes.id}}
+                            </th>
+                            {% if clientes.cpf %}
+                            <td><a href="editar_pf/{{clientes.id}}/">{{clientes.nome}}</a></td>
+                            {% else %}
+                            <td><a href="editar_pj/{{clientes.id}}/">{{clientes.nome}}</a></td>
+                            {% endif %}
                             <td>{{clientes.telefone}}</td>
                             <td>{{clientes.endereco}}</td>
                             <td>{{clientes.cidade}}</td>

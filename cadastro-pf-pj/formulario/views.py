@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .forms import FormPessoaFisica
 from .forms import FormPessoaJuridica
 from .models import DadosPessoa
-from django.views import generic
 
 
 def lista_cadastro(request):
@@ -41,7 +40,7 @@ def novo_cadastro_pj(request):
         return render(request, 'cadastro/cadastro_pf.html', {'form': form_pj})
 
 
-def editar_cadastro_pf(request, id):
+def editar_cadastro_pj(request, id):
     cad = get_object_or_404(DadosPessoa, pk=id)
     form_pj = FormPessoaJuridica(instance=cad)
 
@@ -59,14 +58,20 @@ def editar_cadastro_pf(request, id):
         return render(request, 'cadastro/edit_pj.html', {'form': form_pj})
 
 
-def vercadastro(request, id):
+def editar_cadastro_pf(request, id):
     cad = get_object_or_404(DadosPessoa, pk=id)
+    form_pf = FormPessoaFisica(instance=cad)
 
-    if DadosPessoa:
-        form_pf = FormPessoaFisica(instance=cad)
-        return render(request, 'cadastro/cadastro.html', {'form': form_pf})
+    if request.method == 'POST':
+        form_pf = FormPessoaFisica(request.POST, instance=cad)
+
+        if not form_pf.is_valid():
+            return render(request, 'cadastro/edit_pf.html', {'form': form_pf})
+
+        else:
+            cad.save()
+            return redirect('/')
 
     else:
-        form_pj = FormPessoaJuridica(instance=cad)
-        return render(request, 'cadastro/cadastro.html', {'form': form_pj})
+        return render(request, 'cadastro/edit_pf.html', {'form': form_pf})
 

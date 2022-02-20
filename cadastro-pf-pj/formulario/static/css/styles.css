@@ -6,3 +6,17 @@
     background: #ccc;
     color: blue;
 }
+
+.form-check-input{
+    margin-right: 10px;
+}
+
+.dropdown{
+    margin-bottom: 20px;
+    border: solid 1px  #ccc;
+    border-radius: 5px;
+}
+
+.btn{
+    margin: 5px;
+}
