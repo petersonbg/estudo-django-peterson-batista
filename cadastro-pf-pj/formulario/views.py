@@ -5,7 +5,7 @@ from .models import DadosPessoa
 
 
 def lista_cadastro(request):
-    cliente = DadosPessoa.objects.all().order_by('id')
+    cliente = DadosPessoa.objects.all().order_by('nome')
 
     return render(request, 'cadastro/lista_cad.html', {'cliente': cliente})
 
