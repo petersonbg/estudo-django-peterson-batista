@@ -1,8 +1,5 @@
 from django.shortcuts import get_object_or_404
 from django.views.generic import DetailView, ListView
-
-
-
 from .models import Category, Product
 
 
@@ -12,7 +9,7 @@ class ProductDetailView(DetailView):
 
 class ProductListView(ListView):
     category = None
-    paginate_by = 6
+    paginate_by = 12
 
     def get_queryset(self):
         queryset = Product.available.all()

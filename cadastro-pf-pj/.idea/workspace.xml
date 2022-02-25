@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="0947931f-796b-4dde-81c8-ddc73eb0efc3" name="Changes" comment="Função editar cadastro">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tela-login" beforeDir="false" afterPath="$PROJECT_DIR$/../tela-login" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/formulario/templates/cadastro/edit_pf.html" beforeDir="false" afterPath="$PROJECT_DIR$/formulario/templates/cadastro/edit_pf.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/formulario/templates/cadastro/lista_cad.html" beforeDir="false" afterPath="$PROJECT_DIR$/formulario/templates/cadastro/lista_cad.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/formulario/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/formulario/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,12 +35,15 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="24tPIXwffrfNHVSwvDVzHHvkcC7" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -123,6 +129,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Templates, Urls, views" />
     <MESSAGE value="forms, templates" />
     <MESSAGE value="Form refeito, alterações na views e template" />
