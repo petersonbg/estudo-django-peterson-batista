@@ -31,4 +31,4 @@ class OrderCreateView(CreateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["cart"] = Cart(self.request)
-        return
+        return context

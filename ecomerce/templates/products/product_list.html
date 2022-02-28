@@ -2,6 +2,7 @@
 
 {% load static %}
 {% load product_tags %}
+{% load widget_tweaks %}
 
 {% block title %}
 {% if category %}
@@ -50,6 +51,7 @@ Produtos
                             <p class="card-text font-weight-bold">R$ {{ product.price }}</p>
                         </a>
                     </div>
+
                 </div>
                 {% if forloop.counter|divisibleby:"3" and not forloop.last %}
             </div>
