@@ -19,16 +19,16 @@ class OrderCreateView(CreateView):
             for item in cart:
                 Item.objects.create(
                     order=order,
-                    product=item["product"],
-                    price=item["price"],
-                    quantity=item["quantity"],
+                    product=item['product'],
+                    price=item['price'],
+                    quantity=item['quantity'],
                 )
             cart.clear()
-            self.request.session["order_id"] = order.id
-            return redirect(reverse("payments:process"))
-        return redirect(reverse("pages:home"))
+            self.request.session['order_id'] = order.id
+            return redirect(reverse('payments:process'))
+        return redirect(reverse('pages:home'))
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["cart"] = Cart(self.request)
+        context['cart'] = Cart(self.request)
         return context

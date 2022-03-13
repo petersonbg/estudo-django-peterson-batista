@@ -7,3 +7,6 @@ django-debug-toolbar~=3.2.4
 django-autoslug~=1.9.8
 ipython~=8.1.0
 django-crispy-forms~=1.14.0
+django-localflavor
+django-environ
+mercadopago==2.0.10
