@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    {% for details in detail %}
+    {{ details.name }}
+    <label>Cpf: </label>{{ details.cpf }}
+    <label>CNPJ: </label>{{ details.cnpj }}
+    {{ details.cell }}
+    {% endfor %}
+</div>
+
+
+{% endblock %}

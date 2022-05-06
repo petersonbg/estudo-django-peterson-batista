@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container">
+    <div class="buttons-top">
+        <button class="btn btn-outline-success" type="button">Novo Cadastro</button>
+        <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+    </div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Telefone</th>
+                <th scope="col">Endereço</th>
+                <th scope="col">Cidade</th>
+            </tr>
+            </thead>
+            {% for clients in client %}
+            <tbody>
+            <tr>
+                <th scope="row">
+                    {{clients.id}}
+                </th>
+                {% if clients.cpf %}
+                <td><a href="{{clients.get_absolute_url}}">{{clients.name}}</a></td>
+                {% else %}
+                <td><a href="{{clients.get_absolute_url}}">{{clients.name}}</a></td>
+                {% endif %}
+                <td>{{clients.cell}}</td>
+                <td>{{clients.address}}</td>
+                <td>{{clients.city}}</td>
+            </tr>
+            </tbody>
+        {% endfor %}
+        </table>
+    </div>
+{% endblock %}
